@@ -91,4 +91,10 @@ contract addresses: [
   'terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq',
   'terra1emqzm6me89rcd4pl93kvts3rpaeczj62nhwnzg'
 ]
+
+### TODO
+- [ ] Remove unnecessary contracts
+- [ ] Upgrade scripts to typescript
+- [ ] Integrate bridge-forwarder directly into this repo
+- [ ] Update tests
   
