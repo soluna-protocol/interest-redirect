@@ -93,7 +93,8 @@ contract addresses: [
 ]
 
 ### TODO
-- [ ] Remove unnecessary contracts
+- [x] Remove unnecessary contracts
 - [ ] Upgrade scripts to typescript
 - [ ] Update tests
+- [ ] Remove fee
   
