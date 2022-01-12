@@ -95,6 +95,5 @@ contract addresses: [
 ### TODO
 - [ ] Remove unnecessary contracts
 - [ ] Upgrade scripts to typescript
-- [ ] Integrate bridge-forwarder directly into this repo
 - [ ] Update tests
   
