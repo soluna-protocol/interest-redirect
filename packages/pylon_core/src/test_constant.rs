@@ -4,12 +4,6 @@ pub const TEST_CREATOR: &str = "creator";
 pub const TEST_USER: &str = "user";
 pub const TEST_BENEFICIARY: &str = "beneficiary";
 
-// =============== FACTORY
-pub const TEST_FACTORY: &str = "factory";
-pub const TEST_FACTORY_OWNER: &str = "factory_owner";
-pub const TEST_FACTORY_FEE_RATE: u64 = 25;
-pub const TEST_FACTORY_FEE_COLLECTOR: &str = "factory_fee_collector";
-
 // =============== ADAPTER
 pub const TEST_ADAPTER: &str = "adapter";
 pub const TEST_ADAPTER_TARGET: &str = "adapter_target";
