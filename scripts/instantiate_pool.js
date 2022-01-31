@@ -4,7 +4,6 @@ import fetch from 'isomorphic-fetch';
 
 // Fetch gas prices and convert to `Coin` format.
 const gasPrices = await (await fetch('https://bombay-fcd.terra.dev/v1/txs/gas_prices')).json();
-console.log(gasPrices)
 const gasPricesCoins = new Coins(gasPrices);
 
 const terra = new LCDClient({
@@ -31,7 +30,7 @@ const mk = new MnemonicKey({
 
 const wallet = terra.wallet(mk);
 
-const code_id = 32425
+const code_id = 36390
 
 const instantiate = new MsgInstantiateContract(
   wallet.key.accAddress,

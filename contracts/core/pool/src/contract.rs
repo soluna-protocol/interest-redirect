@@ -54,8 +54,8 @@ pub fn instantiate(
             funds: vec![],
             label: "".to_string(),
             msg: to_binary(&Cw20InstantiateMsg {
-                name: format!("Deposit Token - {}", msg.pool_name),
-                symbol: "PylonDP".to_string(),
+                name: "solUST".to_string(),
+                symbol: "solUST".to_string(),
                 decimals: 6,
                 initial_balances: vec![],
                 mint: Some(MinterResponse {

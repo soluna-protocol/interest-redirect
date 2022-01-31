@@ -40,9 +40,8 @@ const execute = new MsgExecuteContract(
 const executeTx = await wallet.createAndSignTx({
   msgs: [execute]
 });
-
-const _ = await terra.tx.broadcast(executeTx);
-
+const r = await terra.tx.broadcast(executeTx);
+console.log(r)
 const result = await terra.wasm.contractQuery(
   "terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq",
   { total_deposit_amount: { } } // query msg

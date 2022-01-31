@@ -10,11 +10,11 @@
 
 ### Environment Setup
 
-- Rust v1.44.1+
-- `wasm32-unknown-unknown` target
-- Docker
+* Rust v1.44.1+
+* `wasm32-unknown-unknown` target
+* Docker
 
-1. Install `rustup` via https://rustup.rs/
+1. Install `rustup` via <https://rustup.rs/>
 
 2. Run the following:
 
@@ -23,7 +23,7 @@ rustup default stable
 rustup target add wasm32-unknown-unknown
 ```
 
-3. Make sure [Docker](https://www.docker.com/) is installed
+1. Make sure [Docker](https://www.docker.com/) is installed
 
 ### Unit / Integration Tests
 
@@ -63,7 +63,7 @@ be available inside the `artifacts/` directory.
 
 MIT @Pylon Protocol
 
-### Kyle's commands 
+### Kyle's commands
 
 ```sh
 docker run --rm -v "$(pwd)":/code \                                                                                                          
@@ -85,6 +85,7 @@ terrad tx wasm instantiate 4 '{"beneficiary":"terra1dcegyrekltswvyy0xy69ydgxn9x8
 ```
 
 ### Deployed
+
 ***Bombay***
 code_id: 32425
 contract addresses: [
@@ -92,9 +93,18 @@ contract addresses: [
   'terra1emqzm6me89rcd4pl93kvts3rpaeczj62nhwnzg'
 ]
 
+[
+  'terra1mc9yh6dc8seh4y5w4gwzpqs39undtpd2tw537u',
+  'terra1trdkl2uffrephee77nnfv0hm6xm3hv3rxyn4ww'
+]
+
+**Columbus**
+
+
 ### TODO
-- [x] Remove unnecessary contracts
-- [ ] Upgrade scripts to typescript
-- [ ] Update tests
-- [ ] Remove fee
+
+* [x] Remove unnecessary contracts
+* [ ] Upgrade scripts to typescript
+* [ ] Update tests
+* [ ] Remove fee
   
