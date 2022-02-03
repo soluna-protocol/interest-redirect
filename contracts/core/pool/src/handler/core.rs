@@ -228,7 +228,8 @@ pub fn earn(deps: DepsMut, env: Env, info: MessageInfo) -> Result<Response, Cont
     }))
         .add_attribute("action", "claim_reward")
         .add_attribute("sender", info.sender.to_string())
-        .add_attribute("amount", earnable.to_string()))
+        .add_attribute("amount", earnable.sub(fee).to_string())
+        .add_attribute("fee", fee.to_string()))
 }
 
 pub fn configure(
