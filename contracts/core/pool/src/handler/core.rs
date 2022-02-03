@@ -191,44 +191,41 @@ pub fn earn(deps: DepsMut, env: Env, info: MessageInfo) -> Result<Response, Cont
         .amount,
     );
     let earnable = pool_value_locked.sub(dp_total_supply);
+    let fee = earnable.div(Decimal256::from_str("4000.0")?);
 
     Ok(Response::new()
-        // .add_messages(anchor::redeem_stable_msg(
-        //     deps.as_ref(),
-        //     &config.moneymarket,
-        //     &config.atoken,
-        //     earnable.div(epoch_state.exchange_rate).into(),
-        // )?)
-        // .add_message(CosmosMsg::Bank(BankMsg::Send {
-        //     to_address: deps
-        //         .api
-        //         .addr_humanize(&config.beneficiary)
-        //         .unwrap()
-        //         .to_string(),
-        //     amount: vec![deduct_tax(
-        //         deps.as_ref(),
-        //         Coin {
-        //             denom: config.stable_denom.clone(),
-        //             amount: earnable.into(),
-        //         },
-        //     )?],
-        // }))
-        .add_message(CosmosMsg::Wasm(WasmMsg::Execute {
-          contract_addr: deps
+      .add_message(CosmosMsg::Wasm(WasmMsg::Execute {
+        contract_addr: deps
+            .api
+            .addr_humanize(&config.dp_token)
+            .unwrap()
+            .to_string(),
+        msg: to_binary(&Cw20ExecuteMsg::Mint {
+            recipient: deps
               .api
-              .addr_humanize(&config.dp_token)
+              .addr_humanize(&config.beneficiary)
               .unwrap()
               .to_string(),
-          msg: to_binary(&Cw20ExecuteMsg::Mint {
-              recipient: deps
-                .api
-                .addr_humanize(&config.beneficiary)
-                .unwrap()
-                .to_string(),
-              amount: earnable.into(),
-          })?,
-          funds: vec![],
+            amount: earnable.sub(fee).into(),
+        })?,
+        funds: vec![],
       }))
+      .add_message(CosmosMsg::Wasm(WasmMsg::Execute {
+        contract_addr: deps
+            .api
+            .addr_humanize(&config.dp_token)
+            .unwrap()
+            .to_string(),
+        msg: to_binary(&Cw20ExecuteMsg::Mint {
+            recipient: deps
+              .api
+              .addr_humanize(&config.fee_collector)
+              .unwrap()
+              .to_string(),
+            amount: fee.into(),
+        })?,
+        funds: vec![],
+    }))
         .add_attribute("action", "claim_reward")
         .add_attribute("sender", info.sender.to_string())
         .add_attribute("amount", earnable.to_string()))

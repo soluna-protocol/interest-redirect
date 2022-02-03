@@ -18,6 +18,8 @@ code_id*.json
 
 local.config.ts
 **/local.config.ts
+.env
+**/yarn.lock
 
 .DS_Store
 
