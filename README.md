@@ -59,6 +59,6 @@ core_pool: terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7
 solUST: terra1spgmfack053u53e6mj47xq3rxfe4cx8cgtlgpq
 
 ***Columbus***
-code_id:
-core_pool:
-solUST:
+code_id: 2763
+core_pool: terra1aug2pyftq4e85kq5590ud30yswnewa42n9fmr8
+solUST: terra1ysx2yfxn7uk6s8ujmnamrv7h6s3egxazt2j69c

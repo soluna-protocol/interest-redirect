@@ -21,7 +21,7 @@ const mk = new MnemonicKey({
 
 const wallet = terra.wallet(mk);
 
-const code_id = 2748
+const code_id = 2763
 
 const instantiate = new MsgInstantiateContract(
   wallet.key.accAddress,
@@ -30,9 +30,9 @@ const instantiate = new MsgInstantiateContract(
   {
     pool_name: "Soluna",
     beneficiary: "terra1cqenfchrkf0axul952sdr8ky5k5j8ye9acxje2",
-    fee_collector: "terra1cqenfchrkf0axul952sdr8ky5k5j8ye9acxje2",
-    moneymarket: "terra15dwd5mj8v59wpj0wvt233mf5efdff808c5tkal",
-    dp_code_id: 148,
+    fee_collector: "terra1dwyfj2m3e3lcyzu6haznqnj57pl769n6947vgv",
+    moneymarket: "terra1sepfj7s0aeg5967uxnfk4thzlerrsktkpelm5s",
+    dp_code_id: 3,
   }, // InitMsg
 );
 
