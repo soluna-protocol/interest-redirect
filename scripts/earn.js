@@ -1,5 +1,4 @@
 import { LCDClient, MsgExecuteContract, MsgSend, MsgSwap, MnemonicKey, isTxError, Coin, Coins} from '@terra-money/terra.js';
-import * as fs from 'fs';
 import fetch from 'isomorphic-fetch';
 import "dotenv/config";
 
@@ -20,25 +19,19 @@ const mk = new MnemonicKey({
 })
 
 let result = await terra.wasm.contractQuery(
-  "terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq",
-  { total_deposit_amount: { } } // query msg
+  "terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7",
+  { claimable_reward: { } } // query msg
 );
 
 console.log(result)
 
 const wallet = terra.wallet(mk);
 
-let message = Buffer.from(JSON.stringify({redeem: {}})).toString('base64');
-
 const execute = new MsgExecuteContract(
   wallet.key.accAddress,
-  "terra1emqzm6me89rcd4pl93kvts3rpaeczj62nhwnzg",
+  "terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7",
   {
-    send: {
-      amount: "8000",
-      contract: "terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq",
-      msg: message,
-    },
+    earn: {},
   },
   {}
 )

@@ -51,10 +51,14 @@ be available inside the `artifacts/` directory.
 
 MIT @Soluna Protocol
 
-### Deployed
+## Deployed
 
 ***Bombay***
-code_id: 32425
-pool address: terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq
-solUST address :  'terra1emqzm6me89rcd4pl93kvts3rpaeczj62nhwnzg'
-  
+code_id: 41242
+core_pool: terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7
+solUST: terra1spgmfack053u53e6mj47xq3rxfe4cx8cgtlgpq
+
+***Columbus***
+code_id:
+core_pool:
+solUST:

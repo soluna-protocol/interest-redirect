@@ -4,12 +4,12 @@ import fetch from 'isomorphic-fetch';
 import "dotenv/config";
 
 // Fetch gas prices and convert to `Coin` format.
-const gasPrices = await (await fetch('https://bombay-fcd.terra.dev/v1/txs/gas_prices')).json();
+const gasPrices = await (await fetch('https://fcd.terra.dev/v1/txs/gas_prices')).json();
 const gasPricesCoins = new Coins(gasPrices);
 
 const terra = new LCDClient({
-  URL: "https://bombay-lcd.terra.dev/",
-  chainID: "bombay-12",
+  URL: "https://lcd.terra.dev/",
+  chainID: "columbus-5",
   gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
@@ -21,7 +21,7 @@ const mk = new MnemonicKey({
 
 const wallet = terra.wallet(mk);
 
-const code_id = 2631
+const code_id = 2748
 
 const instantiate = new MsgInstantiateContract(
   wallet.key.accAddress,
@@ -29,8 +29,8 @@ const instantiate = new MsgInstantiateContract(
   code_id, // code ID
   {
     pool_name: "Soluna",
-    beneficiary: "terra1lm3c7tldz9m08duvce3t5f3n6r2r0e33f2ewgu",
-    fee_collector: "terra1lm3c7tldz9m08duvce3t5f3n6r2r0e33f2ewgu",
+    beneficiary: "terra1cqenfchrkf0axul952sdr8ky5k5j8ye9acxje2",
+    fee_collector: "terra1cqenfchrkf0axul952sdr8ky5k5j8ye9acxje2",
     moneymarket: "terra15dwd5mj8v59wpj0wvt233mf5efdff808c5tkal",
     dp_code_id: 148,
   }, // InitMsg

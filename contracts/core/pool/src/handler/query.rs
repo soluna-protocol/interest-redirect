@@ -96,7 +96,7 @@ pub fn claimable_reward(deps: Deps, env: Env) -> StdResult<Binary> {
         .amount,
     );
     let earnable = pool_value_locked.sub(dp_total_supply);
-    let fee = earnable.div(Decimal256::from_str("5.0")?); // TODO: fix it (20%)
+    let fee = earnable.div(Decimal256::from_str("4000.0")?); // TODO: fix it (20%)
 
     to_binary(&resp::ClaimableRewardResponse {
         amount: earnable.sub(fee),

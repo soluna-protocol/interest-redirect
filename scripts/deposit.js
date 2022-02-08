@@ -23,7 +23,7 @@ const wallet = terra.wallet(mk);
 
 const execute = new MsgExecuteContract(
   wallet.key.accAddress, // sender
-  "terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq", // contract account address
+  "terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7", // contract account address
   { deposit: {} }, // handle msg
   { uusd: "2000000" }
 );
@@ -33,7 +33,7 @@ const executeTx = await wallet.createAndSignTx({
 });
 const r = await terra.tx.broadcast(executeTx);
 const result = await terra.wasm.contractQuery(
-  "terra1vt8ln3dn3fu7uceyde6q67annt46cy8jvxwjlq",
+  "terra1t2eehshcueggptcge5prr4vx8wrztx3v8vwku7",
   { total_deposit_amount: { } } // query msg
 );
 
